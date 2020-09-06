@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.trash{
+			margin-right: auto;
+			margin-left: auto;
+		}
+		.box{
+			background-color: gray;
+			width: 200px;
+			position: absolute;
+			left: 0px;
+			border-right-style: double;
+			border-bottom-style: double;
+		}
+		.jojo{
+			position: absolute;
+			left: 1117px;
+			top: 248px;
+			transform: rotate(-12deg);
+		}
+		.jesus{
+			position: absolute;
+			left: 455px;
+			top: 160px;
+			width: 80px;
+		}
+		.note{
+			position: absolute;
+			top: 580px;
+			left: 155px;
+			width: 100px;
+			transform: rotate(40deg);
+		}
+		.ronald{
+			position: absolute;
+			height: 50px;
+			left: 947px;
+			top: 5px;
+		}
+		.win{
+			display: none;
+			width: 400px;
+			height: 300px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div style="background-image: url(trash.jpg); height: 700px; background-size: 100% 100%;" class="col-10 mx-auto trash">
+	<div class="box pl-3">
+		<h2>Найдите:</h2>
+		<p class="pjojo">1) Джо Джо</p>
+		<p class="pjesus">2) Иисус</p>
+		<p class="pronald">3) Рон Уизли</p>
+		<p class="pnote">4) Тетадь смерти</p>
+		<h2>очки: <span class="score"></span></h2>
+	</div>
+	<img src="jojo1.png" class="jojo col-1">
+	<img src="jesus.png" class="jesus">
+	<img src="note.png" class="note">
+	<img src="ronald.png" class="ronald">
+</div>
+<div class="win" style="background-image: url(win.png);background-size: 100% 100%;"></div>
+
+<script type="text/javascript">
+	let score = 0;
+	document.querySelector(".score").innerHTML = score;
+	document.querySelector(".jojo").onclick = function(){
+		score = score + 1;
+		document.querySelector(".score").innerHTML = score;
+		alert("Молодец, ты нашел JOJO!");
+		document.querySelector(".jojo").style.display = "none";
+		document.querySelector(".pjojo").style.textDecoration = "line-through";
+		if (score == 4){
+			document.querySelector(".trash").style.display = "none";
+			document.querySelector(".win").style.display = "block";
+		}
+	}
+	document.querySelector(".jesus").onclick = function(){
+		score = score + 1;
+		document.querySelector(".score").innerHTML = score;
+		alert("Молодец, теперь ты благословен!");
+		document.querySelector(".jesus").style.display = "none";
+		document.querySelector(".pjesus").style.textDecoration = "line-through";
+		if (score == 4){
+			document.querySelector(".trash").style.display = "none";
+			document.querySelector(".win").style.display = "block";
+		}
+	}
+	document.querySelector(".note").onclick = function(){
+		score = score + 1;
+		document.querySelector(".score").innerHTML = score;
+		alert("Поздравляю, теперь ты можешь убить кого угодно!");
+		document.querySelector(".note").style.display = "none";
+		document.querySelector(".pnote").style.textDecoration = "line-through";
+		if (score == 4){
+			document.querySelector(".trash").style.display = "none";
+			document.querySelector(".win").style.display = "block";
+		}
+	}
+	document.querySelector(".ronald").onclick = function(){
+		score = score + 1;
+		document.querySelector(".score").innerHTML = score;
+		alert("Так держать!");
+		document.querySelector(".ronald").style.display = "none";
+		document.querySelector(".pronald").style.textDecoration = "line-through";
+		if (score == 4){
+			document.querySelector(".trash").style.display = "none";
+			document.querySelector(".win").style.display = "block";
+		}
+	}
+</script>
+</body>
+</html>
